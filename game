@@ -1,0 +1,27 @@
+import random
+
+def tahmin_etme_oyunu():
+    # Bilgisayarın rastgele bir sayı seçmesi (1 ile 100 arasında)
+    hedef_sayi = random.randint(1, 100)
+    
+    print("1 ile 100 arasında bir sayı düşündüm. Bu sayıyı tahmin edebilir misin?")
+    
+    tahmin = None
+    deneme_sayisi = 0
+    
+    while tahmin != hedef_sayi:
+        # Oyuncudan tahmin al
+        tahmin = int(input("Tahmininizi girin: "))
+        deneme_sayisi += 1
+        
+        # Tahminin doğru olup olmadığını kontrol et
+        if tahmin < hedef_sayi:
+            print("Daha yüksek bir sayı tahmin edin.")
+        elif tahmin > hedef_sayi:
+            print("Daha düşük bir sayı tahmin edin.")
+        else:
+            print(f"Tebrikler! Doğru tahmin! {deneme_sayisi} denemede buldunuz.")
+
+# Oyunu başlat
+if __name__ == "__main__":
+    tahmin_etme_oyunu()
